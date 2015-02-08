@@ -8,6 +8,7 @@
 <script>
 function playGame() {
   var userChoice = prompt("Do you choose rock, paper or scissors?");
+
   var computerChoice = Math.random();
 
   if (computerChoice < 0.34) {
@@ -18,7 +19,9 @@ function playGame() {
   }
   else {
     computerChoice = "scissors";
-  } console.log("Computer: " + computerChoice);
+  }
+
+  console.log("Computer: " + computerChoice);
 
   var compare = function (choice1, choice2) {
     if (choice1 === choice2) {
@@ -29,34 +32,35 @@ function playGame() {
         if (choice2 === "scissors") {
           alert ("rock wins");
         }
-      else {
-        alert ("paper wins");
+        else {
+          alert ("paper wins");
+        }
       }
-    }
-    else if (choice1 === "paper") {
-      if (choice2 === "rock") {
-        alert ("paper wins");
+      else if (choice1 === "paper") {
+        if (choice2 === "rock") {
+          alert ("paper wins");
+        }
+        else {
+          alert ("scissors wins");
+        }
       }
-      else {
-        alert ("scissors wins");
-      }
-    }
-    else if (choice1 === "scissors") {
-      if(choice2 === "rock") {
-        alert("rock wins");
-      }
-      else {
-        alert ("scissors wins");
+      else if (choice1 === "scissors") {
+        if(choice2 === "rock") {
+          alert("rock wins");
+        }
+        else {
+          alert ("scissors wins");
+        }
       }
     }
   };
 
-  compare (userChoice, computerChoice);
+  compare(userChoice, computerChoice);
 }
 
 </script>
- <input type="submit" value="Play RPS" onclick="playGame();" />
+
+ <input type="button" value="Play RPS" onclick="playGame();" />
 
 </body>
 </html>
-
